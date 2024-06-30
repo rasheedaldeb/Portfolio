@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { HashLink as Link } from 'react-router-hash-link'
 import { ThemeContext } from '../../Context/ThemContext'
 const Footer = () => {
     const {mode, mode2} = useContext(ThemeContext)
@@ -9,15 +9,15 @@ const Footer = () => {
         <div className={` ${mode2} footer-info flex flex-col items-center justify-center gap-5 lg:gap-10 md:flex-row
         text-secondery`}>
         <ul className='left flex gap-10 font-bold md:text-lg lg:text-xl '>
-            <li><Link>Home</Link></li>
-            <li><Link>About</Link></li>
-            <li><Link>skills</Link></li>
+            <li><Link to="/#hero">Home</Link></li>
+            <li><Link to="/#about">About</Link></li>
+            <li><Link to="/#skills">skills</Link></li>
         </ul>
         <img src={`/images/rasheed-logo-${mode}.png`} width={200} alt="" />
         <ul className='right flex gap-10 font-bold md:text-lg lg:text-xl'>
-            <li>Education</li>
-            <li>Portfolio</li>
-            <li>Contact</li>
+            <li><Link to="/#educat">Education</Link></li>
+            <li><Link to="/#portfolio">Portfolio</Link></li>
+            <li><Link to="#contact">Contact</Link></li>
         </ul>
         </div>
         <div className="social-footer flex flex-col items-center ">
