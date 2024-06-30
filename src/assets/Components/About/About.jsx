@@ -24,7 +24,7 @@ const About = () => {
                 <div className="social flex justify-around items-center  text-2xl "
                 style={{width: "264px", height:"72px"}}>
                      {/* // social media */}
-                <Link to="https:www.linkedin.com/in/rasheed-aldeb-a3aa68259"><i class="fa-brands fa-linkedin"></i></Link>
+                <Link to="https://www.linkedin.com/in/rasheed-aldeb-a3aa68259"><i class="fa-brands fa-linkedin"></i></Link>
                 <Link to="https://www.facebook.com/rashed.aldeb.16"><i class="fa-brands fa-facebook"></i></Link>
                 <Link to="https://github.com/rasheedaldeb"><i class="fa-brands fa-github"></i></Link>
                 <Link to="https://x.com/RasheedAld75756"><i class="fa-brands fa-x-twitter"></i></Link>
