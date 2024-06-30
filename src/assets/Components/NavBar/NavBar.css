@@ -1,0 +1,34 @@
+@media screen and (max-width:768px) {
+    nav .nav-list {
+        display: none;
+    }
+    nav button {
+        display: none;
+    }
+    nav .logo {
+        width: 140px;
+    }
+    nav .mobile-bar {
+        display: block !important;
+    }
+}
+@media screen and (max-width: 645px) {
+    .mobile-nav {
+        width: 250px !important;
+    }
+}
+.mobile-nav {
+    background-color: white;
+}
+.scrol-nav {
+    transition: 0.3s all;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.583);
+}
+.active {
+    border-bottom: 2px solid rgb(51, 50, 50);
+    padding-bottom: 5px;
+}
+.trans {
+    transform: translateY(-736px);
+}

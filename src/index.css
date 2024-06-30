@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+    font-family: "Roboto", sans-serif;
+    scroll-behavior: smooth;
+    transition: 0.3s all;
+}
+body {
+    background-color: rgba(0, 0, 0, 0.064);
+}
+.dark {
+    background-color: black;
+}
+.dark2 {
+    color: #fff;
+}
+.dark3 {
+    background-color: #445964;
+}
+.light3 {
+    background-color: #fff;
+}

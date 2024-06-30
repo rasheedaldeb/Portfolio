@@ -1,0 +1,13 @@
+.cv-contact {
+    width: 200px;
+    height: 50px;
+    background-color: #445964;
+    border-radius: 5px;
+    color: white;
+    transition: 0.3s all;
+}
+.cv-contact:hover {
+    background: none;
+    border: 1px solid #445964;
+    color: #445964;
+}
