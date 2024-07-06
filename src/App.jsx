@@ -51,19 +51,19 @@ function App() {
     <About/>
     <Skills/>
     <Education  cards={[{course: "Frontend Basices", detail: "Syrian Computer Society", subtitle: "HTML,CSS,JS and jQuary training for frontend development basices technologies.",
-      date:"May 2022 - Jun 2022"
+      date:"Jul 2023 - Aug 2023"
     },
       {course:"Full Frontend Development", detail:"Vica Web Solutions", subtitle: "Fully frontend web development training, HTML,CSS,JS including frontend libraries and frameworks.",
         date:"Nov 2023 - Mar 2024"
       },
       {course:"CompTIA A+", detail:"New Horizons Center", subtitle:"Coputer and laptops maintenance hardware and software,IT technical support basices.",
-        date:"Feb 2021 - Apr 2021"
+        date:"Dec 2023 - Feb 2023"
       },
       {course:"CompTIA N+", detail:"New Horizons Center", subtitle:" maintain, troubleshoot, and support a network, and understand basices networking technologies, such as TCP/IP.",
-        date:"Apr 2021 - Jun 2021"
+        date:"Jan 2023 - Mar 2023"
       },
       {course:"Diploma in English language", detail:"National Geographic Learning", subtitle:"More than 13 English as a second language courses from beginning to advanced.",
-        date:"Dec 2019 - Jan 2021"
+        date:"Dec 2019 - Sep 2023"
       },
       {course:"IT Technical Support Training", detail:"Damascus University", subtitle:"provided technical support for customers and emploees, fix hardware and software issues in computers, network and printers.",
         date:"Jan 2023 - Sep 2023"
