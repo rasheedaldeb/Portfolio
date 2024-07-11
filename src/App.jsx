@@ -70,6 +70,7 @@ function App() {
       }
     ]}/>
     <Portfolio projects={[{photo:"/images/book.png", title:"B-Book", url:"https://books-website-coral.vercel.app/", github:"https://github.com/rasheedaldeb/books-website"},
+    {photo:"/images/dashboard.png", title:"Dashboard", url:"https://admin-dashboard-kappa-ivory.vercel.app/", github:"https://github.com/rasheedaldeb/Admin-dashboard"},
       {photo:"/images/travel.png", title:"Travel", url:"https://rasheedaldeb.github.io/react-travel-website/", github:"https://github.com/rasheedaldeb/react-travel-website"},
       {photo:"/images/food.png", title:"Food Store", url:"https://rasheedaldeb.github.io/food-multipages/", github:"https://github.com/rasheedaldeb/food-multipages"},
       {photo:"/images/shopping.png", title:"Shopping", url:"https://rasheedaldeb.github.io/shoping-cart/", github:"https://github.com/rasheedaldeb/shoping-cart"},

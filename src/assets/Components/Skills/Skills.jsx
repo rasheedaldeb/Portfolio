@@ -31,6 +31,7 @@ const Skills = () => {
         <SwiperSlide><img style={{width:"200px"}} src="/images/github.png" alt="github" /></SwiperSlide>
         <SwiperSlide><img style={{width:"200px"}} src="/images/bootstrap.png" alt="bootstrap" /></SwiperSlide>
         <SwiperSlide><img style={{width:"200px"}} src="/images/api.png" alt="api" /></SwiperSlide>
+        <SwiperSlide><img style={{width:"200px"}} src="/images/sass.png" alt="sass" /></SwiperSlide>
         </Swiper>
         </div>
     )
