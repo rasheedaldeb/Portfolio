@@ -1,5 +1,11 @@
 export const data = [
   {
+    photo: "/images/advanced-e-commerce.png",
+    title: "Advanced E-commerce",
+    url: "https://e-commerce-react-beta-ecru.vercel.app/",
+    github: "https://github.com/rasheedaldeb/E-commerce-react",
+  },
+  {
     photo: "/images/book.png",
     title: "B-Book",
     url: "https://books-website-coral.vercel.app/",
