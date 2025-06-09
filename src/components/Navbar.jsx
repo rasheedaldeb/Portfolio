@@ -13,7 +13,7 @@ const navItems = [
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  // const [selectedPage, setSelectedPage] = useState("#hero");
   const changBgColor = () => {
     if (window.scrollY >= 30) {
       setIsScrolled(true);
@@ -77,8 +77,7 @@ export const Navbar = () => {
               <a
                 key={key}
                 href={item.href}
-                className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                onClick={() => setIsMenuOpen(false)}
+                className={` text-foreground/80 hover:text-primary transition-colors duration-300`}
               >
                 {item.name}
               </a>
