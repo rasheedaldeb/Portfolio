@@ -1,6 +1,15 @@
 export const projects = [
   {
     id: 1,
+    title: "The General Authority for Tourism and Hotel Training in Syria.",
+    description:
+      "This website showcases The General Authority for Tourism and Hotel Training in Syria, highlighting its training programs, achievements, and contributions to the tourism and hospitality sector. It provides a clear overview of the Authority’s mission, projects, and impact.",
+    image: "/projects/tourism.png",
+    tags: "Next.js App Route, TailwindCss , Swiper , Responsive Design",
+    demoUrl: "https://gc-tht.edu.sy/",
+  },
+  {
+    id: 2,
     title: "Cinpaa Training",
     description:
       "Developed an intuitive and responsive training website using React.js. The platform was designed to deliver a seamless learning experience, facilitate easy course enrollment, and provide comprehensive course management features.",
@@ -9,7 +18,7 @@ export const projects = [
     demoUrl: "http://front-end.cinpaa.org/",
   },
   {
-    id: 2,
+    id: 3,
     title: "Evogym",
     description:
       "dynamic and engaging fitness website designed to help users achieve their health and wellness goals. Built with React and TypeScript, FitLife offers a seamless and interactive user experience, ensuring that users can easily navigate through various features and resources.",
@@ -17,15 +26,7 @@ export const projects = [
     tags: "TypeScript, react , framer motion",
     demoUrl: "https://rashiedgyme.netlify.app/",
   },
-  {
-    id: 3,
-    title: "Akarat Plus",
-    description:
-      "A modern and interactive real estate webapplication built with React, designed to provide aseamless user experience for property buyers,sellers, and agents. The app features a dynamicand responsive interface, ensuring compatibilityacross all devices",
-    image: "/projects/user.png",
-    tags: "React, react-router , Axios",
-    demoUrl: "https://user-graduation.vercel.app/",
-  },
+
   {
     id: 4,
     title: "Akarat Plus Company Dashboard",
