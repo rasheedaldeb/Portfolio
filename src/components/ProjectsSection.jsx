@@ -4,10 +4,9 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { cn } from "@/lib/utils";
 import {
   Navigation,
   Pagination,
@@ -150,6 +149,7 @@ export const ProjectsSection = () => {
                       className="w-full h-full object-cover"
                       whileHover={{ scale: 1.1 }}
                       transition={{ duration: 0.5 }}
+                      loading="lazy"
                     />
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100"
