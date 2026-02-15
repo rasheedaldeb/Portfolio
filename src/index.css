@@ -97,7 +97,9 @@
 
   body {
     @apply bg-background text-foreground transition-colors duration-300;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
   }
 }
 
@@ -159,4 +161,77 @@
   margin: 0 auto;
   padding: 0;
   text-align: center;
+}
+/* Add to your global CSS file */
+
+.projects-swiper {
+  padding: 20px 0 40px 0;
+}
+
+.projects-swiper .swiper-slide {
+  width: 350px;
+  height: auto;
+  transition: all 0.3s ease;
+}
+
+.projects-swiper .swiper-slide-active {
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+.projects-swiper .swiper-slide-next,
+.projects-swiper .swiper-slide-prev {
+  transform: scale(0.95);
+  opacity: 0.8;
+}
+
+.projects-swiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: hsl(var(--primary) / 0.3);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.projects-swiper .swiper-pagination-bullet-active {
+  width: 30px;
+  border-radius: 5px;
+  background: hsl(var(--primary));
+}
+
+.projects-swiper .swiper-pagination-bullet-active-main {
+  transform: scale(1.2);
+}
+
+/* Custom animation for active slide */
+@keyframes slideGlow {
+  0% {
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px 5px hsl(var(--primary) / 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0.3);
+  }
+}
+
+.projects-swiper .swiper-slide-active .group {
+  animation: slideGlow 3s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .projects-swiper .swiper-slide {
+    width: 300px;
+  }
+
+  .projects-swiper .swiper-slide-active {
+    transform: scale(1);
+  }
+
+  .projects-swiper .swiper-slide-next,
+  .projects-swiper .swiper-slide-prev {
+    transform: scale(0.9);
+  }
 }
