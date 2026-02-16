@@ -67,7 +67,7 @@ export const ProjectsSection = () => {
         }}
       />
 
-      <div className="container mx-auto max-w-6xl flex flex-col items-center relative z-10">
+      <div className="container mx-auto max-w-6xl flex flex-col items-center relative z-10 p-0">
         <motion.h2
           className="text-3xl md:text-4xl font-bold mb-4 text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -90,7 +90,7 @@ export const ProjectsSection = () => {
         </motion.p>
 
         {/* Swiper Slider */}
-        <div className="w-full relative px-12">
+        <div className="w-full relative md:px-12 px-0">
           <Swiper
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             effect="coverflow"
