@@ -72,9 +72,9 @@ export const Navbar = () => {
                 textShadow: "0 0 8px rgba(99, 102, 241, 0.6)",
               }}
             >
-              Rasheed
+              <span className="font-poppins">RA</span>
             </motion.span>{" "}
-            Website
+            <span className="font-akaya">Rasheed Aldeb</span>
           </span>
         </motion.a>
 

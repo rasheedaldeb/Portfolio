@@ -104,7 +104,7 @@ export const HeroSection = () => {
           whileHover="hover"
         >
           <motion.img
-            src="/img/photo_2024-06-07_00-09-33.jpg"
+            src="/img/WhatsApp Image 2026-02-20 at 8.08.12 PM-Photoroom.png"
             alt="Rasheed Aldeb"
             className="rounded-md lg:max-w-sm cursor-pointer"
             style={{
