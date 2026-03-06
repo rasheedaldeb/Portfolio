@@ -216,7 +216,7 @@ export const ProjectsSection = () => {
           {/* Custom Navigation Buttons */}
           <motion.button
             onClick={goPrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-primary text-white shadow-lg flex items-center justify-center hover:bg-primary/90 transition-all duration-300 focus:outline-none"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-primary text-white shadow-lg lg:flex hidden items-center justify-center hover:bg-primary/90 transition-all duration-300 focus:outline-none"
             whileHover={{ scale: 1.1, x: -5 }}
             whileTap={{ scale: 0.9 }}
             initial={{ opacity: 0, x: -20 }}
@@ -228,7 +228,7 @@ export const ProjectsSection = () => {
 
           <motion.button
             onClick={goNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-primary text-white shadow-lg flex items-center justify-center hover:bg-primary/90 transition-all duration-300 focus:outline-none"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-primary text-white shadow-lg lg:flex hidden items-center justify-center hover:bg-primary/90 transition-all duration-300 focus:outline-none"
             whileHover={{ scale: 1.1, x: 5 }}
             whileTap={{ scale: 0.9 }}
             initial={{ opacity: 0, x: 20 }}

@@ -21,9 +21,17 @@ import {
   FaReact,
   FaWordpress,
 } from "react-icons/fa";
-import { SiMui, SiRedux, SiSocketdotio, SiTypescript } from "react-icons/si";
+import {
+  SiMui,
+  SiPrime,
+  SiPrisma,
+  SiRedux,
+  SiSocketdotio,
+  SiTypescript,
+} from "react-icons/si";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { VscVscode } from "react-icons/vsc";
+import { DiMysql, DiPostgresql } from "react-icons/di";
 
 const skills = [
   // Frontend
@@ -54,7 +62,7 @@ const skills = [
   },
   { name: "Bootstrap", level: 95, category: "frontend", icon: <FaBootstrap /> },
   { name: "MUI", level: 70, category: "frontend", icon: <SiMui /> },
-  { name: "Next.js", level: 70, category: "frontend", icon: <RiNextjsFill /> },
+  { name: "Next.js", level: 80, category: "frontend", icon: <RiNextjsFill /> },
   {
     name: "Socket.io",
     level: 70,
@@ -82,9 +90,27 @@ const skills = [
     category: "frontend",
     icon: <SiRedux />,
   },
+  {
+    name: "MySQL",
+    level: 70,
+    category: "backend",
+    icon: <DiMysql />,
+  },
+  {
+    name: "PostgreSQL",
+    level: 75,
+    category: "backend",
+    icon: <DiPostgresql />,
+  },
+  {
+    name: "Prisma",
+    level: 75,
+    category: "backend",
+    icon: <SiPrisma />,
+  },
 ];
 
-const categories = ["all", "frontend", "tools"];
+const categories = ["all", "frontend", "tools", "backend"];
 
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
