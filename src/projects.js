@@ -28,41 +28,22 @@ export const projects = [
   },
   {
     id: 4,
-    title: "Evogym",
+    title: "Ecotransferz Admin Panel",
     description:
-      "dynamic and engaging fitness website designed to help users achieve their health and wellness goals. Built with React and TypeScript, FitLife offers a seamless and interactive user experience, ensuring that users can easily navigate through various features and resources.",
-    image: "/projects/gym.png",
-    tags: "TypeScript, react , framer motion",
-    demoUrl: "https://rashiedgyme.netlify.app/",
+      "A modern Taxi App Admin Panel designed to manage and monitor all core operations of a ride-hailing platform. The dashboard enables administrators to manage drivers, passengers, trips, payments, and system analytics through a clean and efficient interface.",
+    image: "/projects/eco.png",
+    tags: " react , react-router-dom ,react-query,custom hook, firebase notification, signalR real-time connection , MUI , tailwindCss ",
   },
 
   {
     id: 5,
-    title: "Akarat Plus Company Dashboard",
+    title: "POS Open Spark (SaaS System)",
     description:
-      "A sleek and powerful dashboard built with React,designed to enable real estate companies toefficiently manage their operations and enhancedecision-making. The dashboard provides anintuitive interface with advanced analytics andmanagement features.",
-    image: "/projects/company.png",
-    tags: "React, react-router , axios",
-    demoUrl: "https://company-graduation.vercel.app/",
+      "This project is a comprehensive Accounting System developed to simplify financial management for businesses. The platform provides tools for tracking transactions, managing invoices, monitoring expenses, and generating financial reports from a centralized dashboard.",
+    image: "/projects/pos.png",
+    tags: "React, react-router ,typeScript, axios, open api generator,oidc oAuth2, MUI , tailwindCss",
   },
-  {
-    id: 6,
-    title: "Macc-Essential",
-    description:
-      "E-commerce Web Application, modern, user-friendly platform designed to provide a seamless shopping experience. Built with React.js, the application offers features such as product browsing, shopping cart management, and secure checkout.",
-    image: "/projects/macc-essential.png",
-    tags: "React, react-router , axios, flowbite-react ,swiper , sass",
-    demoUrl: "https://company-graduation.vercel.app/",
-  },
-  {
-    id: 7,
-    title: "Abaq-Perfume",
-    description:
-      "Discover a world where fragrance tells a story. At Abaq, we believe every scent embodies an emotion, a memory, and a moment. Explore our curated collection of luxurious perfumes designed to captivate and inspire.",
-    image: "/projects/abaq.png",
-    tags: "wordPress , wooCommerce",
-    demoUrl: "https://abaq-perfume.com/",
-  },
+
   {
     id: 8,
     title: "OFT",
@@ -74,12 +55,11 @@ export const projects = [
   },
   {
     id: 9,
-    title: "ShopCart E-commerce",
+    title: "Tranplus Admin Panel",
     description:
-      "Crafted with the power of React and the elegance of Bootstrap, this e-commerce platform offers a seamless and engaging shopping experience. Designed to showcase a wide range of products, the website is fully responsive and optimized for performance",
-    image: "/projects/advanced-e-commerce.png",
-    tags: "React, react-router, react-bootstrap, swiper, firebase",
-    demoUrl: "https://e-commerce-react-beta-ecru.vercel.app/",
+      "This project is a Delivery App Admin Dashboard designed to help administrators manage the entire delivery ecosystem from a single platform. The system provides tools for managing orders, drivers, customers, and delivery performance.",
+    image: "/projects/transplus.png",
+    tags: "React, react-router, typeScript , redux-toolkit",
   },
   {
     id: 10,

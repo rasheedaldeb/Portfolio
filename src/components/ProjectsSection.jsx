@@ -195,17 +195,19 @@ export const ProjectsSection = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.5 }}
                     >
-                      <div className="flex space-x-3">
-                        <motion.a
-                          href={project.demoUrl}
-                          target="_blank"
-                          className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                          whileHover={{ scale: 1.2, rotate: 360 }}
-                          whileTap={{ scale: 0.9 }}
-                        >
-                          <ExternalLink size={20} />
-                        </motion.a>
-                      </div>
+                      {project.demoUrl && (
+                        <div className="flex space-x-3">
+                          <motion.a
+                            href={project.demoUrl}
+                            target="_blank"
+                            className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                            whileHover={{ scale: 1.2, rotate: 360 }}
+                            whileTap={{ scale: 0.9 }}
+                          >
+                            <ExternalLink size={20} />
+                          </motion.a>
+                        </div>
+                      )}
                     </motion.div>
                   </div>
                 </motion.div>

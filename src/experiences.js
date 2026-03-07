@@ -1,0 +1,60 @@
+export const experiences = [
+  {
+    id: 1,
+    role: "Web Developer",
+    company: "Freelancer",
+    location: "Remote",
+    period: "2024 - Present",
+    description: [
+      "Develop and deliver custom web applications for international clients across various industries, ensuring responsive design and optimal user experience.",
+      "Architect and implement full-stack solutions using React.js and Next.js, resulting in 40% faster load times and improved SEO rankings.",
+      "Collaborate directly with clients to translate business requirements into technical specifications, delivering projects 100% on time and within budget.",
+      "Provide ongoing maintenance and technical support, achieving 99.9% client satisfaction through regular updates and performance monitoring.",
+    ],
+    skills: [
+      "React.js",
+      "Next.js",
+      "Tailwind CSS",
+      "REST APIs",
+      "Client Communication",
+    ],
+  },
+  {
+    id: 2,
+    role: "Frontend Developer",
+    company: "Eli-Syr",
+    location: "On Site / Syria",
+    period: "Aug2025 – Oct 2025",
+    description: [
+      "Built responsive, user-focused interfaces using React and modern CSS frameworks.",
+      "Improved UI consistency and performance across multiple product modules.",
+      "Collaborated with designers and backend teams to deliver optimized user experiences.",
+    ],
+    skills: ["React", "Next.js", "Team Collaboration"],
+  },
+  {
+    id: 3,
+    role: "Web Developer",
+    company: "OFT (Own Financial Tactics)",
+    location: "Remote",
+    period: "Oct2024 – Mar2025",
+    description: [
+      "Enhanced website performance, achieving a 30% speed improvement through code optimization.",
+      "Developed reusable UI components and improved site structure for better SEO.",
+      "Implemented efficient data handling and improved user engagement metrics.",
+    ],
+    skills: ["React.js", "WordPress", "Technical Support"],
+  },
+  {
+    id: 4,
+    role: "Frontend Developer Trainee",
+    company: "MasterCoders Software Solution",
+    location: "Syria",
+    period: "2023 (6 months)",
+    description: [
+      "Built user-facing components using React.js with clean, modular architecture.",
+      "Improved UI/UX through responsive layouts and intuitive interactions.",
+    ],
+    skills: ["React", "Modular Architecture", "UI/UX"],
+  },
+];
