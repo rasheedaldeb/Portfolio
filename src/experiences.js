@@ -16,6 +16,8 @@ export const experiences = [
       "Next.js",
       "Tailwind CSS",
       "REST APIs",
+      "MySQL",
+      "PostgreSQL",
       "Client Communication",
     ],
   },
