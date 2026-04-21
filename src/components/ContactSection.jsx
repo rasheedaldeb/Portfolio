@@ -21,6 +21,7 @@ import {
   itemVariants,
   socialIconVariants,
 } from "../style";
+import { useTranslation } from "react-i18next";
 
 export const ContactSection = () => {
   const { toast } = useToast();
@@ -29,6 +30,7 @@ export const ContactSection = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const { t } = useTranslation();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -39,8 +41,8 @@ export const ContactSection = () => {
       })
       .then(() => {
         toast({
-          title: "Message sent!",
-          description: "Thank you for your message. I'll get back to you soon.",
+          title: t("contact.toastSuccessTitle"),
+          description: t("contact.toastSuccessDesc"),
         });
         setIsSubmitting(false);
         setName("");
@@ -49,7 +51,7 @@ export const ContactSection = () => {
       })
       .catch((error) => {
         toast({
-          title: "Failed...",
+          title: t("contact.toastErrorTitle"),
           description: error.text,
           variant: "destructive",
         });
@@ -114,7 +116,7 @@ export const ContactSection = () => {
           className="text-3xl md:text-4xl font-bold mb-4 text-center"
           variants={itemVariants}
         >
-          Get In{" "}
+          {t("contact.title")}
           <motion.span
             className="text-primary inline-block"
             whileHover={{
@@ -122,7 +124,7 @@ export const ContactSection = () => {
               textShadow: "0 0 8px rgba(99, 102, 241, 0.6)",
             }}
           >
-            Touch
+            {t("contact.titleHighlight")}
           </motion.span>
         </motion.h2>
 
@@ -130,8 +132,7 @@ export const ContactSection = () => {
           className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto"
           variants={itemVariants}
         >
-          Have a project in mind or want to collaborate? Feel free to reach out.
-          I'm always open to discussing new opportunities.
+          {t("contact.subtitle")}
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -141,7 +142,7 @@ export const ContactSection = () => {
               className="text-2xl font-semibold mb-6"
               variants={itemVariants}
             >
-              Contact Information
+              {t("contact.infoTitle")}
             </motion.h3>
 
             <div className="space-y-6">
@@ -169,7 +170,7 @@ export const ContactSection = () => {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.6 }}
                   >
-                    Email
+                    {t("contact.email")}
                   </motion.h4>
                   <motion.a
                     href="mailto:rasheedaldeb@gmail.com"
@@ -205,7 +206,7 @@ export const ContactSection = () => {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.7 }}
                   >
-                    Phone
+                    {t("contact.phone")}
                   </motion.h4>
                   <motion.a
                     href="https://wa.me/+963937071349"
@@ -243,7 +244,7 @@ export const ContactSection = () => {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.8 }}
                   >
-                    Location
+                    {t("contact.location")}
                   </motion.h4>
                   <motion.p
                     className="text-muted-foreground"
@@ -261,7 +262,7 @@ export const ContactSection = () => {
                 className="font-medium mb-4 text-center md:text-left"
                 variants={itemVariants}
               >
-                Connect With Me
+                {t("contact.connectTitle")}
               </motion.h4>
               <motion.div
                 className="flex space-x-4 justify-center md:justify-start"
@@ -320,7 +321,7 @@ export const ContactSection = () => {
               className="text-2xl font-semibold mb-6"
               variants={itemVariants}
             >
-              Send a Message
+              {t("contact.send")}
             </motion.h3>
 
             <motion.form
@@ -339,7 +340,7 @@ export const ContactSection = () => {
                   htmlFor="name"
                   className="block text-sm font-medium mb-2"
                 >
-                  Your Name
+                  {t("contact.name")}
                 </label>
                 <motion.input
                   type="text"
@@ -364,7 +365,7 @@ export const ContactSection = () => {
                   htmlFor="email"
                   className="block text-sm font-medium mb-2"
                 >
-                  Your Email
+                  {t("contact.Email")}
                 </label>
                 <motion.input
                   type="email"
@@ -389,7 +390,7 @@ export const ContactSection = () => {
                   htmlFor="message"
                   className="block text-sm font-medium mb-2"
                 >
-                  Your Message
+                  {t("contact.message")}
                 </label>
                 <motion.textarea
                   id="message"
@@ -432,11 +433,11 @@ export const ContactSection = () => {
                           ease: "linear",
                         }}
                       />
-                      Sending...
+                      {t("contact.sending")}
                     </>
                   ) : (
                     <>
-                      Send Message
+                      {t("contact.send")}
                       <motion.div
                         animate={{ x: [0, 5, 0] }}
                         transition={{
@@ -461,7 +462,7 @@ export const ContactSection = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                   >
-                    I'll get back to you within 24 hours! ✨
+                    {t("contact.footerMessage")}
                   </motion.p>
                 )}
               </AnimatePresence>

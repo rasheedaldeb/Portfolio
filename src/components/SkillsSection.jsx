@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
+
 import {
   categoryButtonVariants,
   containerVariants,
@@ -9,7 +11,8 @@ import {
   scrollVariants,
   skillBarVariants,
   skillCardVariants,
-} from "../style"; // Adjust import path
+} from "../style";
+
 import {
   FaBootstrap,
   FaCss3,
@@ -21,28 +24,31 @@ import {
   FaReact,
   FaWordpress,
 } from "react-icons/fa";
+
 import {
   SiMui,
-  SiPrime,
   SiPrisma,
   SiRedux,
   SiSocketdotio,
   SiTypescript,
 } from "react-icons/si";
+
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { VscVscode } from "react-icons/vsc";
 import { DiMysql, DiPostgresql } from "react-icons/di";
 
+// --------------------------------------------------------------
+// Skills Data
+// --------------------------------------------------------------
 const skills = [
-  // Frontend
   {
     name: "HTML/CSS",
     level: 95,
     category: "frontend",
     icon: (
       <div className="flex items-center gap-3">
-        {" "}
-        <FaHtml5 /> <FaCss3 />
+        <FaHtml5 />
+        <FaCss3 />
       </div>
     ),
   },
@@ -70,75 +76,63 @@ const skills = [
     icon: <SiSocketdotio />,
   },
 
-  // Tools
   {
     name: "Git/GitHub",
     level: 90,
     category: "tools",
     icon: (
       <div className="flex items-center gap-3">
-        <FaGitAlt /> <FaGithub />
+        <FaGitAlt />
+        <FaGithub />
       </div>
     ),
   },
   { name: "Figma", level: 85, category: "tools", icon: <FaFigma /> },
   { name: "VS Code", level: 95, category: "tools", icon: <VscVscode /> },
   { name: "WordPress", level: 60, category: "tools", icon: <FaWordpress /> },
-  {
-    name: "Redux Toolkit",
-    level: 65,
-    category: "frontend",
-    icon: <SiRedux />,
-  },
-  {
-    name: "MySQL",
-    level: 70,
-    category: "backend",
-    icon: <DiMysql />,
-  },
+
+  { name: "Redux Toolkit", level: 65, category: "frontend", icon: <SiRedux /> },
+  { name: "MySQL", level: 70, category: "backend", icon: <DiMysql /> },
   {
     name: "PostgreSQL",
     level: 75,
     category: "backend",
     icon: <DiPostgresql />,
   },
-  {
-    name: "Prisma",
-    level: 75,
-    category: "backend",
-    icon: <SiPrisma />,
-  },
+  { name: "Prisma", level: 75, category: "backend", icon: <SiPrisma /> },
 ];
 
 const categories = ["all", "frontend", "tools", "backend"];
 
+// --------------------------------------------------------------
+// Component
+// --------------------------------------------------------------
 export const SkillsSection = () => {
+  const { t, i18n } = useTranslation();
+
   const [activeCategory, setActiveCategory] = useState("all");
-  const [isChanging, setIsChanging] = useState(false);
+
+  const isRTL = i18n.language === "ar";
 
   const filteredSkills = skills.filter(
     (skill) => activeCategory === "all" || skill.category === activeCategory,
   );
 
-  // Handle category change with animation
   const handleCategoryChange = (category) => {
-    setIsChanging(true);
-    setTimeout(() => {
-      setActiveCategory(category);
-      setIsChanging(false);
-    }, 300);
+    setActiveCategory(category); // ✅ instant & reliable
   };
 
   return (
     <motion.section
       id="skills"
+      dir={isRTL ? "rtl" : "ltr"}
       className="py-24 px-4 relative bg-secondary/30 overflow-hidden"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
     >
-      {/* Animated background elements */}
+      {/* Background */}
       <motion.div
         className="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"
         variants={scrollVariants}
@@ -152,7 +146,7 @@ export const SkillsSection = () => {
         custom={1}
       />
 
-      {/* Floating particles */}
+      {/* Particles */}
       {[...Array(6)].map((_, i) => (
         <motion.div
           key={i}
@@ -176,23 +170,15 @@ export const SkillsSection = () => {
       ))}
 
       <div className="container mx-auto max-w-5xl relative z-10">
+        {/* Header */}
         <motion.h2
           className="text-3xl md:text-4xl font-bold mb-12 text-center"
           variants={itemVariants}
         >
-          My{" "}
-          <motion.span
-            className="text-primary inline-block"
-            whileHover={{
-              scale: 1.1,
-              textShadow: "0 0 8px rgba(99, 102, 241, 0.6)",
-            }}
-          >
-            Skills
-          </motion.span>
+          {t("skills.title")}
         </motion.h2>
 
-        {/* Category Buttons */}
+        {/* Categories */}
         <motion.div
           className="flex flex-wrap justify-center gap-4 mb-12"
           variants={containerVariants}
@@ -224,7 +210,8 @@ export const SkillsSection = () => {
                   }}
                 />
               )}
-              {category}
+
+              {t(`skills.categories.${category}`)}
             </motion.button>
           ))}
         </motion.div>
@@ -248,7 +235,6 @@ export const SkillsSection = () => {
                 whileTap="tap"
                 className="bg-card p-6 rounded-lg shadow-xs card-hover relative overflow-hidden group"
               >
-                {/* Animated background gradient on hover */}
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-transparent"
                   initial={{ x: "-100%" }}
@@ -258,123 +244,64 @@ export const SkillsSection = () => {
 
                 <div className="text-left mb-4 relative z-10">
                   <div className="flex items-center gap-2">
-                    <motion.span
-                      className="text-2xl"
-                      animate={{
-                        rotate: [0, 10, -10, 0],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        repeatType: "reverse",
-                      }}
-                    >
-                      {skill.icon}
-                    </motion.span>
-                    <motion.h3
-                      className="font-semibold text-lg"
-                      whileHover={{ x: 5 }}
-                    >
+                    <motion.span className="text-2xl">{skill.icon}</motion.span>
+
+                    <motion.h3 className="font-semibold text-lg">
                       {skill.name}
                     </motion.h3>
                   </div>
                 </div>
 
-                {/* Progress Bar Container */}
+                {/* Progress */}
                 <div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden relative">
                   <motion.div
-                    className="bg-primary h-2 rounded-full origin-left relative"
+                    className="bg-primary h-2 rounded-full origin-left"
                     variants={skillBarVariants}
                     custom={skill.level}
                     initial="hidden"
                     animate="visible"
-                  >
-                    {/* Shimmer effect */}
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                      animate={{
-                        x: ["-100%", "200%"],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        ease: "linear",
-                        repeatDelay: 1,
-                      }}
-                    />
-                  </motion.div>
+                  />
                 </div>
 
-                {/* Percentage with counter animation */}
-                <motion.div
-                  className="text-right mt-1 relative z-10"
-                  variants={percentageVariants}
-                  initial="hidden"
-                  animate="visible"
-                >
-                  <motion.span
-                    className="text-sm text-muted-foreground inline-block"
-                    animate={{
-                      scale: [1, 1.2, 1],
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      repeatType: "reverse",
-                      delay: index * 0.2,
-                    }}
-                  >
+                {/* Percentage */}
+                <div className="text-right mt-1">
+                  <span className="text-sm text-muted-foreground">
                     {skill.level}%
-                  </motion.span>
-                </motion.div>
-
-                {/* Decorative corner */}
-                <motion.div
-                  className="absolute bottom-0 right-0 w-12 h-12 opacity-0 group-hover:opacity-100"
-                  initial={{ rotate: 45, scale: 0 }}
-                  whileHover={{ rotate: 0, scale: 1 }}
-                >
-                  <div className="w-full h-full bg-primary/10 rounded-tl-3xl" />
-                </motion.div>
+                  </span>
+                </div>
               </motion.div>
             ))}
           </motion.div>
         </AnimatePresence>
 
-        {/* Summary Stats */}
+        {/* Stats */}
         <motion.div
           className="mt-12 grid grid-cols-2 sm:grid-cols-3 gap-4"
           variants={containerVariants}
         >
           {[
-            { label: "Total Skills", value: skills.length },
+            { label: t("skills.stats.total"), value: skills.length },
             {
-              label: "Frontend",
+              label: t("skills.stats.frontend"),
               value: skills.filter((s) => s.category === "frontend").length,
             },
             {
-              label: "Tools",
+              label: t("skills.stats.tools"),
               value: skills.filter((s) => s.category === "tools").length,
+            },
+            {
+              label: t("skills.stats.backend"),
+              value: skills.filter((s) => s.category === "backend").length,
             },
           ].map((stat, index) => (
             <motion.div
-              key={stat.label}
+              key={index}
               className="text-center p-4 bg-card rounded-lg w-full"
               variants={itemVariants}
-              custom={index}
-              whileHover={{ scale: 1.05, y: -5 }}
             >
-              <motion.div
-                className="text-2xl font-bold text-primary"
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  delay: index * 0.3,
-                }}
-              >
+              <div className="text-2xl font-bold text-primary">
                 {stat.value}
-              </motion.div>
+              </div>
               <div className="text-sm text-muted-foreground">{stat.label}</div>
             </motion.div>
           ))}

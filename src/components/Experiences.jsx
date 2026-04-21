@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Briefcase, Calendar, MapPin } from "lucide-react";
-import { experiences } from "../experiences";
+import { useTranslation } from "react-i18next";
 
 // --------------------------------------------------------------
 // Animation variants
@@ -12,7 +12,7 @@ const fadeInUp = {
 };
 
 const staggerContainer = {
-  hidden: { opacity: 1 }, // keep it subtle
+  hidden: { opacity: 1 },
   visible: {
     transition: {
       staggerChildren: 0.2,
@@ -34,6 +34,15 @@ const cardHover = {
 // Main Component
 // --------------------------------------------------------------
 const Experience = () => {
+  const { t, i18n } = useTranslation("translation", {
+    keyPrefix: "experience",
+  });
+
+  const rawExperiences = t("items", { returnObjects: true });
+
+  const experiences = Array.isArray(rawExperiences) ? rawExperiences : [];
+  const isRTL = i18n.language === "ar";
+
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -45,13 +54,8 @@ const Experience = () => {
       id="experience"
       className="relative py-20 md:py-28 overflow-hidden bg-background"
       ref={ref}
+      dir={isRTL ? "rtl" : "ltr"} // ✅ RTL support
     >
-      {/* Background subtle cosmic elements — optional, matching your site's vibe */}
-      {/* <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-40 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-pulse-subtle" />
-        <div className="absolute bottom-40 right-10 w-80 h-80 bg-primary/10 rounded-full blur-3xl animate-float" />
-      </div> */}
-
       <div className="container relative z-10">
         {/* Section header */}
         <motion.div
@@ -61,11 +65,11 @@ const Experience = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-poppins font-bold mb-4">
-            <span className="text-foreground">Work </span>
-            <span className="text-primary ">Experience</span>
+            <span className="text-foreground">{t("title")}</span>
           </h2>
+
           <p className="text-foreground/70 mt-4 max-w-2xl mx-auto font-poppins">
-            Building digital solutions with modern web development technologies
+            {t("subtitle")}
           </p>
         </motion.div>
 
@@ -76,7 +80,7 @@ const Experience = () => {
           animate={inView ? "visible" : "hidden"}
           className="space-y-8 max-w-4xl mx-auto"
         >
-          {experiences.map((exp, index) => (
+          {experiences?.map((exp, index) => (
             <motion.div
               key={exp.id}
               variants={fadeInUp}
@@ -85,24 +89,33 @@ const Experience = () => {
               animate="rest"
               className="group relative"
             >
-              {/* Timeline connector line (except last) */}
-              {index < experiences.length - 1 && (
-                <div className="absolute left-8 md:left-10 top-20 bottom-0 w-0.5 bg-gradient-to-b from-primary/40 to-transparent" />
+              {/* Timeline connector */}
+              {index < experiences?.length - 1 && (
+                <div
+                  className={`absolute ${
+                    isRTL ? "right-8 md:right-10" : "left-8 md:left-10"
+                  } top-20 bottom-0 w-0.5 bg-gradient-to-b from-primary/40 to-transparent`}
+                />
               )}
 
               <motion.div
                 variants={cardHover}
                 className="relative bg-card rounded-2xl p-6 md:p-8 border border-border/40 backdrop-blur-sm shadow-xl transition-colors"
               >
-                {/* Decorative left accent */}
-                <div className="absolute left-0 top-8 bottom-8 w-1 bg-primary rounded-full opacity-80 group-hover:opacity-100 transition-opacity" />
+                {/* Accent line */}
+                <div
+                  className={`absolute ${
+                    isRTL ? "right-0" : "left-0"
+                  } top-8 bottom-8 w-1 bg-primary rounded-full opacity-80 group-hover:opacity-100 transition-opacity`}
+                />
 
                 <div className="flex flex-col md:flex-row md:items-start gap-6">
-                  {/* Icon / date column */}
+                  {/* Icon / date */}
                   <div className="flex md:flex-col items-start md:items-center gap-3 md:gap-2 min-w-[120px]">
                     <div className="p-3 rounded-xl bg-primary/10 text-primary border border-primary/20">
                       <Briefcase size={24} />
                     </div>
+
                     <div className="flex items-center gap-2 text-sm font-poppins text-foreground/70 bg-background/50 px-3 py-1 rounded-full">
                       <Calendar size={14} className="text-primary" />
                       <span>{exp.period}</span>
@@ -114,11 +127,14 @@ const Experience = () => {
                     <h3 className="text-2xl font-poppins font-semibold text-foreground mb-1">
                       {exp.role}
                     </h3>
+
                     <div className="flex items-center gap-2 mb-4">
                       <span className="text-lg text-primary font-medium">
                         {exp.company}
                       </span>
+
                       <span className="text-foreground/30">•</span>
+
                       <span className="flex items-center gap-1 text-sm text-foreground/60">
                         <MapPin size={14} />
                         {exp.location}
@@ -137,7 +153,7 @@ const Experience = () => {
                       ))}
                     </ul>
 
-                    {/* Skill chips */}
+                    {/* Skills */}
                     <div className="flex flex-wrap gap-2">
                       {exp.skills.map((skill) => (
                         <span

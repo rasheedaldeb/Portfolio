@@ -1,0 +1,160 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Rasheed Aldeb",
+    "role": "Frontend Developer & Web Solution Expert",
+    "description": "I help brands and businesses turn complex ideas into high-converting digital reality. Specializing in high-performance, responsive websites designed to grow your audience and elevate your online presence.",
+    "cta": "Start Your Project",
+    "scroll": "Scroll to Explore"
+  },
+  "experience": {
+    "title": "Work Experience",
+    "subtitle": "Building digital solutions with modern web development technologies",
+    "items": [
+      {
+        "id": 1,
+        "role": "Web Developer",
+        "company": "Freelancer",
+        "location": "Remote",
+        "period": "2024 - Present",
+        "description": [
+          "Develop and deliver custom web applications for international clients across various industries, ensuring responsive design and optimal user experience.",
+          "Architect and implement full-stack solutions using React.js and Next.js, resulting in 40% faster load times and improved SEO rankings.",
+          "Collaborate directly with clients to translate business requirements into technical specifications, delivering projects 100% on time and within budget.",
+          "Provide ongoing maintenance and technical support, achieving 99.9% client satisfaction through regular updates and performance monitoring."
+        ],
+        "skills": [
+          "React.js",
+          "Next.js",
+          "Tailwind CSS",
+          "REST APIs",
+          "MySQL",
+          "PostgreSQL",
+          "Client Communication"
+        ]
+      },
+      {
+        "id": 2,
+        "role": "Frontend Developer",
+        "company": "Eli-Syr",
+        "location": "On Site / Syria",
+        "period": "Aug 2025 – Oct 2025",
+        "description": [
+          "Built responsive, user-focused interfaces using React and modern CSS frameworks.",
+          "Improved UI consistency and performance across multiple product modules.",
+          "Collaborated with designers and backend teams to deliver optimized user experiences."
+        ],
+        "skills": ["React", "Next.js", "Team Collaboration"]
+      },
+      {
+        "id": 3,
+        "role": "Web Developer",
+        "company": "OFT (Own Financial Tactics)",
+        "location": "Remote",
+        "period": "Oct 2024 – Mar 2025",
+        "description": [
+          "Enhanced website performance, achieving a 30% speed improvement through code optimization.",
+          "Developed reusable UI components and improved site structure for better SEO.",
+          "Implemented efficient data handling and improved user engagement metrics."
+        ],
+        "skills": ["React.js", "WordPress", "Technical Support"]
+      },
+      {
+        "id": 4,
+        "role": "Frontend Developer Trainee",
+        "company": "MasterCoders Software Solution",
+        "location": "Syria",
+        "period": "2023 (6 months)",
+        "description": [
+          "Built user-facing components using React.js with clean, modular architecture.",
+          "Improved UI/UX through responsive layouts and intuitive interactions."
+        ],
+        "skills": ["React", "Modular Architecture", "UI/UX"]
+      }
+    ]
+  },
+  "skills": {
+    "title": "My Skills",
+    "categories": {
+      "all": "All",
+      "frontend": "Frontend",
+      "tools": "Tools",
+      "backend": "Backend"
+    },
+    "stats": {
+      "total": "Total Skills",
+      "frontend": "Frontend",
+      "tools": "Tools",
+      "backend": "Backend"
+    }
+  },
+  "projects": {
+    "title": "Featured",
+    "highlight": "Projects",
+    "subtitle": "Here are some of my recent projects. Each one is crafted with performance, UX, and scalability in mind.",
+    "github": "Check My GitHub",
+    "items": {
+      "1": {
+        "description": "We are an architecture and interior design studio focused on creating functional, elegant, and timeless spaces. Our work combines creativity, technical expertise, and attention to detail to deliver designs that reflect each client’s vision. From concept to completion, we develop thoughtful solutions for residential and commercial projects, ensuring quality, efficiency, and lasting value in every space we create."
+      },
+      "2": {
+        "description": "This website showcases The General Authority for Tourism and Hotel Training in Syria, highlighting its training programs, achievements, and contributions to the tourism and hospitality sector. It provides a clear overview of the Authority’s mission, projects, and impact."
+      },
+      "3": {
+        "description": "Developed an intuitive and responsive training website using React.js. The platform delivers a seamless learning experience, easy course enrollment, and efficient course management features."
+      },
+      "4": {
+        "description": "A modern Taxi App Admin Panel designed to manage drivers, passengers, trips, payments, and analytics through a clean dashboard interface."
+      },
+      "5": {
+        "description": "A comprehensive accounting system that simplifies financial management by tracking transactions, invoices, expenses, and generating reports from a centralized dashboard."
+      },
+      "8": {
+        "description": "A professional financial company website built with React featuring services, blog articles, market analysis, and resource tools."
+      },
+      "9": {
+        "description": "A delivery admin dashboard to manage orders, drivers, customers, and delivery performance in a unified system."
+      },
+      "10": {
+        "description": "A user-friendly book browsing platform built with React offering a wide collection of books across multiple genres."
+      }
+    }
+  },
+  "contact": {
+    "title": "Get In",
+    "titleHighlight": "Touch",
+    "subtitle": "Have a project in mind or want to collaborate? Feel free to reach out.",
+    "infoTitle": "Contact Information",
+    "formTitle": "Send a Message",
+    "connectTitle": "Connect With Me",
+
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "name": "Your Name",
+    "Email": "Your Email",
+    "message": "Your Message",
+    "namePlaceholder": "Your Name...",
+    "emailPlaceholder": "Your Email...",
+    "messagePlaceholder": "Your Message...",
+
+    "send": "Send Message",
+    "sending": "Sending...",
+
+    "footerMessage": "I'll get back to you within 24 hours! ✨",
+
+    "toastSuccessTitle": "Message sent!",
+    "toastSuccessDesc": "Thank you for your message.",
+    "toastErrorTitle": "Failed to send"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

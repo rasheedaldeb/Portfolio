@@ -14,6 +14,7 @@ import {
   EffectCoverflow,
 } from "swiper/modules";
 import { projects } from "../projects";
+import { useTranslation } from "react-i18next";
 
 // Import Swiper styles
 import "swiper/css";
@@ -23,22 +24,22 @@ import "swiper/css/effect-coverflow";
 
 export const ProjectsSection = () => {
   const swiperRef = useRef(null);
+  const { t } = useTranslation();
 
-  // Custom navigation functions for Swiper
   const goNext = () => {
-    if (swiperRef.current) {
-      swiperRef.current.slideNext();
-    }
+    if (swiperRef.current) swiperRef.current.slideNext();
   };
 
   const goPrev = () => {
-    if (swiperRef.current) {
-      swiperRef.current.slidePrev();
-    }
+    if (swiperRef.current) swiperRef.current.slidePrev();
   };
 
   return (
-    <section id="projects" className="py-24 px-4 relative overflow-hidden">
+    <section
+      dir="ltr"
+      id="projects"
+      className="py-24 px-4 relative overflow-hidden"
+    >
       {/* Animated background elements */}
       <motion.div
         className="absolute top-20 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"
@@ -75,7 +76,8 @@ export const ProjectsSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          Featured <span className="text-primary">Projects</span>
+          {t("projects.title")}{" "}
+          <span className="text-primary">{t("projects.highlight")}</span>
         </motion.h2>
 
         <motion.p
@@ -85,8 +87,7 @@ export const ProjectsSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Here are some of my recent projects. Each project was carefully
-          crafted with attention to detail, performance, and user experience.
+          {t("projects.subtitle")}
         </motion.p>
 
         {/* Swiper Slider */}
@@ -117,20 +118,6 @@ export const ProjectsSection = () => {
             navigation={false}
             modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
             className="projects-swiper"
-            breakpoints={{
-              640: {
-                slidesPerView: 1,
-                spaceBetween: 20,
-              },
-              768: {
-                slidesPerView: 2,
-                spaceBetween: 30,
-              },
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 40,
-              },
-            }}
           >
             {projects.map((project, index) => (
               <SwiperSlide key={project.id} className="pb-12">
@@ -151,115 +138,67 @@ export const ProjectsSection = () => {
                       transition={{ duration: 0.5 }}
                       loading="lazy"
                     />
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100"
-                      initial={{ opacity: 0 }}
-                      whileHover={{ opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                    />
                   </div>
 
                   <div className="p-6">
-                    <motion.div
-                      className="flex flex-wrap gap-2 mb-4"
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.2 }}
-                    >
+                    <div className="flex flex-wrap gap-2 mb-4">
                       <span className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground">
                         {project.tags}
                       </span>
-                    </motion.div>
+                    </div>
 
-                    <motion.h3
-                      className="text-xl font-semibold mb-1"
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.3 }}
-                    >
+                    <h3 className="text-xl font-semibold mb-1">
                       {project.title}
-                    </motion.h3>
+                    </h3>
 
-                    <motion.p
-                      className="text-muted-foreground text-sm mb-4"
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.4 }}
-                    >
-                      {project.description}
-                    </motion.p>
+                    {/* ✅ FIXED TRANSLATION HERE */}
+                    <p className="text-muted-foreground text-sm mb-4">
+                      {t(project.descriptionKey)}
+                    </p>
 
-                    <motion.div
-                      className="flex justify-between items-center"
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.5 }}
-                    >
+                    <div className="flex justify-between items-center">
                       {project.demoUrl && (
-                        <div className="flex space-x-3">
-                          <motion.a
-                            href={project.demoUrl}
-                            target="_blank"
-                            className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                            whileHover={{ scale: 1.2, rotate: 360 }}
-                            whileTap={{ scale: 0.9 }}
-                          >
-                            <ExternalLink size={20} />
-                          </motion.a>
-                        </div>
+                        <motion.a
+                          href={project.demoUrl}
+                          target="_blank"
+                          className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                          whileHover={{ scale: 1.2, rotate: 360 }}
+                          whileTap={{ scale: 0.9 }}
+                        >
+                          <ExternalLink size={20} />
+                        </motion.a>
                       )}
-                    </motion.div>
+                    </div>
                   </div>
                 </motion.div>
               </SwiperSlide>
             ))}
           </Swiper>
 
-          {/* Custom Navigation Buttons */}
+          {/* Navigation */}
           <motion.button
             onClick={goPrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-primary text-white shadow-lg lg:flex hidden items-center justify-center hover:bg-primary/90 transition-all duration-300 focus:outline-none"
-            whileHover={{ scale: 1.1, x: -5 }}
-            whileTap={{ scale: 0.9 }}
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-primary text-white lg:flex hidden items-center justify-center"
           >
             <ChevronLeft size={24} />
           </motion.button>
 
           <motion.button
             onClick={goNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-primary text-white shadow-lg lg:flex hidden items-center justify-center hover:bg-primary/90 transition-all duration-300 focus:outline-none"
-            whileHover={{ scale: 1.1, x: 5 }}
-            whileTap={{ scale: 0.9 }}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-primary text-white lg:flex hidden items-center justify-center"
           >
             <ChevronRight size={24} />
           </motion.button>
         </div>
 
-        {/* GitHub Link */}
-        <motion.div
-          className="text-center mt-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.8 }}
-        >
+        {/* GitHub */}
+        <motion.div className="text-center mt-12">
           <motion.a
             className="cosmic-button w-fit flex items-center mx-auto gap-2"
             target="_blank"
             href="https://github.com/rasheedaldeb"
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0 10px 30px rgba(99, 102, 241, 0.4)",
-            }}
-            whileTap={{ scale: 0.95 }}
           >
-            Check My GitHub <ArrowRight size={16} />
+            {t("projects.github")} <ArrowRight size={16} />
           </motion.a>
         </motion.div>
       </div>
