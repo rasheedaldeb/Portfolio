@@ -16,9 +16,6 @@ const navItemsHrefMap = {
   contact: "#contact",
 };
 
-// Define supported languages (only English and Arabic)
-const SUPPORTED_LANGUAGES = ["en", "ar"];
-
 export const Navbar = () => {
   const { t, changeLanguage, currentLanguage, isLoaded, direction } =
     useLanguage();
@@ -98,8 +95,7 @@ export const Navbar = () => {
     const displayName = nextLang === "ar" ? "العربية" : "EN";
 
     return (
-      <motion.button
-        variants={itemVariants}
+      <button
         onClick={() => changeLanguage(nextLang)}
         className={cn(
           "transition-colors duration-300 font-bold cursor-pointer",
@@ -107,19 +103,13 @@ export const Navbar = () => {
             ? "text-2xl text-foreground/80 hover:text-primary"
             : "text-lg text-foreground/80 hover:text-primary relative px-2 py-1",
         )}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
         aria-label={`Change language to ${nextLang === "ar" ? "Arabic" : "English"}`}
       >
         {displayName}
         {!isMobile && (
-          <motion.span
-            className="absolute bottom-0 left-0 w-full h-0.5 bg-primary/20 transition-all duration-300"
-            initial={{ width: 0 }}
-            whileHover={{ width: "100%", backgroundColor: "var(--primary)" }}
-          />
+          <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary/20 transition-all duration-300" />
         )}
-      </motion.button>
+      </button>
     );
   };
 
@@ -293,7 +283,7 @@ export const Navbar = () => {
                 className="flex items-center gap-6 mt-8"
               >
                 <ThemeToggle />
-                <LanguageSwitcher isMobile={true} />
+                <LanguageSwitcher />
               </motion.div>
             </motion.div>
           )}
