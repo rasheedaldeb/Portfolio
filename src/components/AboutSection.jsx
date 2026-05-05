@@ -92,7 +92,7 @@ export const AboutSection = () => {
               </motion.a>
 
               <motion.a
-                href="https://drive.google.com/file/d/1HNvbSLMrZAX0dR1hly90MV57_yOIMnL0/view?usp=drive_open"
+                href="https://drive.google.com/file/d/1V5RP4QjZQ1Y9xJkj5tLlhXP12nB3EWNW/view?usp=drive_link"
                 target="blank"
                 className="px-8 py-3 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300 text-center font-medium"
                 variants={itemVariants}
