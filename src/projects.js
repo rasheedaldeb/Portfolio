@@ -54,8 +54,16 @@ export const projects = [
   },
   {
     id: 10,
-    title: "B-Book",
+    title: "Inventory Management",
     descriptionKey: "projects.items.10.description",
+    image: "/projects/inventory.png",
+    tags: "Next.js ,Typescript ,  PostgreSQL , Prisma , TailwindCss , Stack Auth",
+    demoUrl: "https://inventory-app-jade.vercel.app/",
+  },
+  {
+    id: 11,
+    title: "B-Book",
+    descriptionKey: "projects.items.11.description",
     image: "/projects/book.png",
     tags: "React, react-router, axios",
     demoUrl: "https://books-website-coral.vercel.app/",
