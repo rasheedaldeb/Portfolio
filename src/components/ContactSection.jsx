@@ -12,7 +12,6 @@ import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { useState, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
 import {
   contactCardVariants,
   containerVariants,
@@ -29,34 +28,54 @@ export const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const { t } = useTranslation();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    emailjs
-      .sendForm("service_93ihbbi", "template_ord3hh8", form.current, {
-        publicKey: "URpL5Tsl8T4Lu9c-k",
-      })
-      .then(() => {
+
+    const formData = {
+      access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,
+      name,
+      email,
+      phone,
+      message,
+    };
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
         toast({
           title: t("contact.toastSuccessTitle"),
           description: t("contact.toastSuccessDesc"),
         });
-        setIsSubmitting(false);
         setName("");
         setEmail("");
+        setPhone(""); // ✅ reset
         setMessage("");
-      })
-      .catch((error) => {
-        toast({
-          title: t("contact.toastErrorTitle"),
-          description: error.text,
-          variant: "destructive",
-        });
-        setIsSubmitting(false);
+      } else {
+        throw new Error(data.message || "Something went wrong");
+      }
+    } catch (error) {
+      toast({
+        title: t("contact.toastErrorTitle"),
+        description: error.message,
+        variant: "destructive",
       });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -379,7 +398,29 @@ export const ContactSection = () => {
                   whileFocus={{ scale: 1.02 }}
                 />
               </motion.div>
-
+              <motion.div
+                variants={formFieldVariants}
+                custom={2}
+                whileFocus="focus"
+              >
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-medium mb-2"
+                >
+                  {t("contact.phone")}
+                </label>
+                <motion.input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={phone}
+                  required
+                  onChange={(e) => setPhone(e.target.value)}
+                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300"
+                  placeholder="+123456789"
+                  whileFocus={{ scale: 1.02 }}
+                />
+              </motion.div>
               {/* Message Field */}
               <motion.div
                 variants={formFieldVariants}
