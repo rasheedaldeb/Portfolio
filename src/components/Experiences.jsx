@@ -78,7 +78,7 @@ const Experience = () => {
           variants={staggerContainer}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="space-y-8 max-w-4xl mx-auto"
+          className="space-y-8 max-w-6xl mx-auto"
         >
           {experiences?.map((exp, index) => (
             <motion.div

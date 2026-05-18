@@ -7,7 +7,6 @@ import {
   categoryButtonVariants,
   containerVariants,
   itemVariants,
-  percentageVariants,
   scrollVariants,
   skillBarVariants,
   skillCardVariants,
@@ -26,6 +25,8 @@ import {
 } from "react-icons/fa";
 
 import {
+  SiMongodb,
+  SiMongoose,
   SiMui,
   SiPrisma,
   SiRedux,
@@ -67,7 +68,7 @@ const skills = [
     icon: <RiTailwindCssFill />,
   },
   { name: "Bootstrap", level: 95, category: "frontend", icon: <FaBootstrap /> },
-  { name: "MUI", level: 70, category: "frontend", icon: <SiMui /> },
+  { name: "MUI", level: 75, category: "frontend", icon: <SiMui /> },
   { name: "Next.js", level: 80, category: "frontend", icon: <RiNextjsFill /> },
   {
     name: "Socket.io",
@@ -91,15 +92,17 @@ const skills = [
   { name: "VS Code", level: 95, category: "tools", icon: <VscVscode /> },
   { name: "WordPress", level: 60, category: "tools", icon: <FaWordpress /> },
 
-  { name: "Redux Toolkit", level: 65, category: "frontend", icon: <SiRedux /> },
-  { name: "MySQL", level: 70, category: "backend", icon: <DiMysql /> },
+  { name: "Redux Toolkit", level: 70, category: "frontend", icon: <SiRedux /> },
+  { name: "MySQL", level: 85, category: "backend", icon: <DiMysql /> },
   {
     name: "PostgreSQL",
-    level: 75,
+    level: 80,
     category: "backend",
     icon: <DiPostgresql />,
   },
-  { name: "Prisma", level: 75, category: "backend", icon: <SiPrisma /> },
+  { name: "Prisma", level: 80, category: "backend", icon: <SiPrisma /> },
+  { name: "MongoDB", level: 60, category: "backend", icon: <SiMongodb /> },
+  { name: "Mongoose", level: 65, category: "backend", icon: <SiMongoose /> },
 ];
 
 const categories = ["all", "frontend", "tools", "backend"];

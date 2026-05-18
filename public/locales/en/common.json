@@ -50,6 +50,7 @@
           "REST APIs",
           "MySQL",
           "PostgreSQL",
+          "MongoDB",
           "Client Communication"
         ]
       },
@@ -113,6 +114,7 @@
     "highlight": "Projects",
     "subtitle": "Here are some of my recent projects. Each one is crafted with performance, UX, and scalability in mind.",
     "github": "Check My GitHub",
+    "inDev": "In Development",
     "items": {
       "1": {
         "description": "We are an architecture and interior design studio focused on creating functional, elegant, and timeless spaces. Our work combines creativity, technical expertise, and attention to detail to deliver designs that reflect each client’s vision. From concept to completion, we develop thoughtful solutions for residential and commercial projects, ensuring quality, efficiency, and lasting value in every space we create."

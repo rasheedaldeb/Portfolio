@@ -168,6 +168,7 @@ export const ProjectsSection = () => {
                           <ExternalLink size={20} />
                         </motion.a>
                       )}
+                      <p>{project.inDev ? t("projects.inDev") : ""}</p>
                     </div>
                   </div>
                 </motion.div>

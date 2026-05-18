@@ -18,6 +18,7 @@ export const experiences = [
       "REST APIs",
       "MySQL",
       "PostgreSQL",
+      "MongoDB",
       "Client Communication",
     ],
   },

@@ -6,6 +6,7 @@ export const projects = [
     image: "/projects/deved-up.png",
     tags: "Next.js App Route, TailwindCss, Swiper, MUI, i18n, Responsive Design",
     demoUrl: "https://deved-up.com",
+    inDev: false,
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ export const projects = [
     image: "/projects/tourism.png",
     tags: "Next.js App Route, TailwindCss , Swiper , Responsive Design",
     demoUrl: "https://gc-tht.edu.sy/",
+    inDev: false,
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ export const projects = [
     image: "/projects/cinpaa.png",
     tags: "React, TailwindCSS, Axios, i18next",
     demoUrl: "http://front-end.cinpaa.org/",
+    inDev: false,
   },
   {
     id: 4,
@@ -29,6 +32,7 @@ export const projects = [
     descriptionKey: "projects.items.4.description",
     image: "/projects/eco.png",
     tags: "react, react-router-dom, react-query, custom hook, firebase notification, signalR, MUI, tailwindCss",
+    inDev: false,
   },
   {
     id: 5,
@@ -36,6 +40,7 @@ export const projects = [
     descriptionKey: "projects.items.5.description",
     image: "/projects/pos.png",
     tags: "React, react-router, typeScript, axios, open api generator, oidc oAuth2, MUI, tailwindCss",
+    inDev: true,
   },
   {
     id: 8,
@@ -44,6 +49,7 @@ export const projects = [
     image: "/projects/oft.png",
     tags: "React, react-router, blurhash, react-helmet-async, framer motion",
     demoUrl: "https://ownfinencialtactics.netlify.app",
+    inDev: false,
   },
   {
     id: 9,
@@ -51,6 +57,7 @@ export const projects = [
     descriptionKey: "projects.items.9.description",
     image: "/projects/transplus.png",
     tags: "React, react-router, typeScript, redux-toolkit",
+    inDev: false,
   },
   {
     id: 10,
@@ -59,6 +66,7 @@ export const projects = [
     image: "/projects/inventory.png",
     tags: "Next.js ,Typescript ,  PostgreSQL , Prisma , TailwindCss , Stack Auth",
     demoUrl: "https://inventory-app-jade.vercel.app/",
+    inDev: false,
   },
   {
     id: 11,
@@ -67,5 +75,6 @@ export const projects = [
     image: "/projects/book.png",
     tags: "React, react-router, axios",
     demoUrl: "https://books-website-coral.vercel.app/",
+    inDev: false,
   },
 ];
