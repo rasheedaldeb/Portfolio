@@ -28,6 +28,7 @@ import {
   SiMongodb,
   SiMongoose,
   SiMui,
+  SiNodedotjs,
   SiPrisma,
   SiRedux,
   SiSocketdotio,
@@ -93,6 +94,7 @@ const skills = [
   { name: "WordPress", level: 60, category: "tools", icon: <FaWordpress /> },
 
   { name: "Redux Toolkit", level: 70, category: "frontend", icon: <SiRedux /> },
+  { name: "Node.js", level: 70, category: "backend", icon: <SiNodedotjs /> },
   { name: "MySQL", level: 85, category: "backend", icon: <DiMysql /> },
   {
     name: "PostgreSQL",
