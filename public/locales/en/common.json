@@ -141,7 +141,7 @@
         "description": "This is an inventory management web application designed to help users track, organize, and manage items or products in a structured way."
       },
       "11": {
-        "description": "A user-friendly book browsing platform built with React offering a wide collection of books across multiple genres."
+        "description": "Developed a full-stack job tracking application to master complex NoSQL data modeling and database management, featuring secure user session authentication and an interactive kanban-style dashboard with smooth drag-and-drop functionality for managing job application stages."
       }
     }
   },

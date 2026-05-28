@@ -70,11 +70,11 @@ export const projects = [
   },
   {
     id: 11,
-    title: "B-Book",
+    title: "job-tracker",
     descriptionKey: "projects.items.11.description",
-    image: "/projects/book.png",
-    tags: "React, react-router, axios",
-    demoUrl: "https://books-website-coral.vercel.app/",
+    image: "/projects/job-tracker.png",
+    tags: "Next.js , MongoDB, Mongoose ODM , TailwindCss , Shadcn UI , Dnd Kit , Better Auth",
+    demoUrl: "https://job-tracker-wine-nu.vercel.app/",
     inDev: false,
   },
 ];
