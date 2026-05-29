@@ -42,15 +42,7 @@ export const projects = [
     tags: "React, react-router, typeScript, axios, open api generator, oidc oAuth2, MUI, tailwindCss",
     inDev: true,
   },
-  {
-    id: 8,
-    title: "OFT",
-    descriptionKey: "projects.items.8.description",
-    image: "/projects/oft.png",
-    tags: "React, react-router, blurhash, react-helmet-async, framer motion",
-    demoUrl: "https://ownfinencialtactics.netlify.app",
-    inDev: false,
-  },
+
   {
     id: 9,
     title: "Tranplus Admin Panel",
