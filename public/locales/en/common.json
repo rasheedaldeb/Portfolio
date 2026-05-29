@@ -142,6 +142,9 @@
       },
       "11": {
         "description": "Developed a full-stack job tracking application to master complex NoSQL data modeling and database management, featuring secure user session authentication and an interactive kanban-style dashboard with smooth drag-and-drop functionality for managing job application stages."
+      },
+      "12": {
+        "description": "Admin panel for The General Authority for Tourism and Hotel Training in Syria. manage centers , news , ads , est"
       }
     }
   },

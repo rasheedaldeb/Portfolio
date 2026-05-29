@@ -19,6 +19,15 @@ export const projects = [
   },
   {
     id: 3,
+    title:
+      "The General Authority for Tourism and Hotel Training in Syria.(Admin Panel)",
+    descriptionKey: "projects.items.12.description",
+    image: "/projects/dashboard2.png",
+    tags: "React.js , TailwindCss , MUI , Swiper , Axios",
+    inDev: false,
+  },
+  {
+    id: 4,
     title: "Cinpaa Training",
     descriptionKey: "projects.items.3.description",
     image: "/projects/cinpaa.png",
@@ -27,7 +36,7 @@ export const projects = [
     inDev: false,
   },
   {
-    id: 4,
+    id: 5,
     title: "Ecotransferz Admin Panel",
     descriptionKey: "projects.items.4.description",
     image: "/projects/eco.png",
@@ -35,7 +44,7 @@ export const projects = [
     inDev: false,
   },
   {
-    id: 5,
+    id: 6,
     title: "POS Open Spark (SaaS System)",
     descriptionKey: "projects.items.5.description",
     image: "/projects/pos.png",
