@@ -25,6 +25,7 @@ import {
 } from "react-icons/fa";
 
 import {
+  SiExpress,
   SiMongodb,
   SiMongoose,
   SiMui,
@@ -94,7 +95,8 @@ const skills = [
   { name: "WordPress", level: 60, category: "tools", icon: <FaWordpress /> },
 
   { name: "Redux Toolkit", level: 70, category: "frontend", icon: <SiRedux /> },
-  { name: "Node.js", level: 70, category: "backend", icon: <SiNodedotjs /> },
+  { name: "Node.js", level: 75, category: "backend", icon: <SiNodedotjs /> },
+  { name: "Express.js", level: 75, category: "backend", icon: <SiExpress /> },
   { name: "MySQL", level: 85, category: "backend", icon: <DiMysql /> },
   {
     name: "PostgreSQL",

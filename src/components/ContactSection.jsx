@@ -158,7 +158,7 @@ export const ContactSection = () => {
           {/* Left Column - Contact Information */}
           <motion.div className="space-y-8" variants={containerVariants}>
             <motion.h3
-              className="text-2xl font-semibold mb-6"
+              className="text-2xl font-semibold mb-6 text-start"
               variants={itemVariants}
             >
               {t("contact.infoTitle")}
@@ -170,7 +170,6 @@ export const ContactSection = () => {
                 className="flex items-start space-x-4"
                 variants={contactCardVariants}
                 custom={0}
-                whileHover="hover"
               >
                 <motion.div
                   className="p-3 rounded-full bg-primary/10"
@@ -206,7 +205,6 @@ export const ContactSection = () => {
                 className="flex items-start space-x-4"
                 variants={contactCardVariants}
                 custom={1}
-                whileHover="hover"
               >
                 <motion.div
                   className="p-3 rounded-full bg-primary/10"
@@ -244,7 +242,6 @@ export const ContactSection = () => {
                 className="flex items-start space-x-4"
                 variants={contactCardVariants}
                 custom={2}
-                whileHover="hover"
               >
                 <motion.div
                   className="p-3 rounded-full bg-primary/10"
@@ -278,7 +275,7 @@ export const ContactSection = () => {
             {/* Social Links */}
             <motion.div className="pt-8" variants={itemVariants}>
               <motion.h4
-                className="font-medium mb-4 text-center md:text-left"
+                className="font-medium mb-4 text-center md:text-start"
                 variants={itemVariants}
               >
                 {t("contact.connectTitle")}
