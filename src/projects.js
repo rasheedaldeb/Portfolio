@@ -36,6 +36,15 @@ export const projects = [
     inDev: false,
   },
   {
+    id: 7,
+    title: "GESCO",
+    descriptionKey: "projects.items.7.description",
+    image: "/projects/gesco.png",
+    tags: "Next.js , TailwindCss , Framer Motion , Swiper , i18n , Responsive Design",
+    demoUrl: "https://gesco-gamma.vercel.app/",
+    inDev: false,
+  },
+  {
     id: 5,
     title: "Ecotransferz Admin Panel",
     descriptionKey: "projects.items.4.description",
@@ -69,13 +78,13 @@ export const projects = [
     demoUrl: "https://inventory-app-jade.vercel.app/",
     inDev: false,
   },
-  {
-    id: 11,
-    title: "job-tracker",
-    descriptionKey: "projects.items.11.description",
-    image: "/projects/job-tracker.png",
-    tags: "Next.js , MongoDB, Mongoose ODM , TailwindCss , Shadcn UI , Dnd Kit , Better Auth",
-    demoUrl: "https://job-tracker-wine-nu.vercel.app/",
-    inDev: false,
-  },
+  // {
+  //   id: 11,
+  //   title: "job-tracker",
+  //   descriptionKey: "projects.items.11.description",
+  //   image: "/projects/job-tracker.png",
+  //   tags: "Next.js , MongoDB, Mongoose ODM , TailwindCss , Shadcn UI , Dnd Kit , Better Auth",
+  //   demoUrl: "https://job-tracker-wine-nu.vercel.app/",
+  //   inDev: false,
+  // },
 ];

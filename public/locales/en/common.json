@@ -117,7 +117,7 @@
     "inDev": "In Development",
     "items": {
       "1": {
-        "description": "We are an architecture and interior design studio focused on creating functional, elegant, and timeless spaces. Our work combines creativity, technical expertise, and attention to detail to deliver designs that reflect each client’s vision. From concept to completion, we develop thoughtful solutions for residential and commercial projects, ensuring quality, efficiency, and lasting value in every space we create."
+        "description": "DevedUp Arch is a premium architectural and engineering design showcase. The website serves as a high-performance digital portfolio, highlighting modern design vision, technical competencies, and structural expertise across the Middle East (specifically the UAE and Syrian markets)."
       },
       "2": {
         "description": "This website showcases The General Authority for Tourism and Hotel Training in Syria, highlighting its training programs, achievements, and contributions to the tourism and hospitality sector. It provides a clear overview of the Authority’s mission, projects, and impact."
@@ -133,6 +133,9 @@
       },
       "8": {
         "description": "A professional financial company website built with React featuring services, blog articles, market analysis, and resource tools."
+      },
+      "7": {
+        "description": "A high-performance, fully responsive corporate web application built for an environmental services firm. The platform delivers a modern user experience with smooth interactive elements and full bilingual support to cater to regional and international clients. "
       },
       "9": {
         "description": "A delivery admin dashboard to manage orders, drivers, customers, and delivery performance in a unified system."
