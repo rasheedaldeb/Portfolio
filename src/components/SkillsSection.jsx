@@ -2,7 +2,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
-
+import { SiCursor } from "@icons-pack/react-simple-icons";
 import {
   categoryButtonVariants,
   containerVariants,
@@ -25,7 +25,10 @@ import {
 } from "react-icons/fa";
 
 import {
+  SiDrizzle,
   SiExpress,
+  SiGithubcopilot,
+  SiGooglegemini,
   SiMongodb,
   SiMongoose,
   SiMui,
@@ -92,6 +95,14 @@ const skills = [
   },
   { name: "Figma", level: 85, category: "tools", icon: <FaFigma /> },
   { name: "VS Code", level: 95, category: "tools", icon: <VscVscode /> },
+  {
+    name: "GitHub Copilot",
+    level: 80,
+    category: "tools",
+    icon: <SiGithubcopilot />,
+  },
+  { name: "Gemini", level: 90, category: "tools", icon: <SiGooglegemini /> },
+  { name: "Cursor", level: 95, category: "tools", icon: <SiCursor /> },
   { name: "WordPress", level: 60, category: "tools", icon: <FaWordpress /> },
 
   { name: "Redux Toolkit", level: 70, category: "frontend", icon: <SiRedux /> },
@@ -105,6 +116,7 @@ const skills = [
     icon: <DiPostgresql />,
   },
   { name: "Prisma", level: 80, category: "backend", icon: <SiPrisma /> },
+  { name: "Drizzle", level: 70, category: "backend", icon: <SiDrizzle /> },
   { name: "MongoDB", level: 60, category: "backend", icon: <SiMongodb /> },
   { name: "Mongoose", level: 65, category: "backend", icon: <SiMongoose /> },
 ];
@@ -133,7 +145,7 @@ export const SkillsSection = () => {
     <motion.section
       id="skills"
       dir={isRTL ? "rtl" : "ltr"}
-      className="py-24 px-4 relative bg-secondary/30 overflow-hidden"
+      className="scroll-mt-24 py-24 px-4 relative bg-secondary/30 overflow-hidden"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}

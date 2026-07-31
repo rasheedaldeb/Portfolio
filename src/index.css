@@ -165,6 +165,17 @@
   padding: 0;
   text-align: center;
 }
+
+#skills {
+  scroll-margin-top: 5rem;
+}
+
+@media (max-width: 640px) {
+  #skills {
+    scroll-margin-top: 6rem;
+  }
+}
+
 /* Add to your global CSS file */
 
 .projects-swiper {
