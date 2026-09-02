@@ -78,13 +78,13 @@ export const projects = [
     demoUrl: "https://inventory-app-jade.vercel.app/",
     inDev: false,
   },
-  // {
-  //   id: 11,
-  //   title: "job-tracker",
-  //   descriptionKey: "projects.items.11.description",
-  //   image: "/projects/job-tracker.png",
-  //   tags: "Next.js , MongoDB, Mongoose ODM , TailwindCss , Shadcn UI , Dnd Kit , Better Auth",
-  //   demoUrl: "https://job-tracker-wine-nu.vercel.app/",
-  //   inDev: false,
-  // },
+  {
+    id: 11,
+    title: "Classroom Management",
+    descriptionKey: "projects.items.11.description",
+    image: "/projects/classroom.png",
+    tags: "Refine Core, Express.js, PostgreSQL, Drizzle ORM, TailwindCss, Shadcn UI, Better Auth, Arcjet, Site24x7",
+    demoUrl: "https://classroom-frontend-six-iota.vercel.app/",
+    inDev: false,
+  },
 ];
