@@ -69,15 +69,7 @@ export const projects = [
     tags: "React, react-router, typeScript, redux-toolkit",
     inDev: false,
   },
-  {
-    id: 10,
-    title: "Inventory Management",
-    descriptionKey: "projects.items.10.description",
-    image: "/projects/inventory.png",
-    tags: "Next.js ,Typescript ,  PostgreSQL , Prisma , TailwindCss , Stack Auth",
-    demoUrl: "https://inventory-app-jade.vercel.app/",
-    inDev: false,
-  },
+
   {
     id: 11,
     title: "Classroom Management",

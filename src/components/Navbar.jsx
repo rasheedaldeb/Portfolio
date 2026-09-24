@@ -7,11 +7,19 @@ import { ThemeToggle } from "./ThemeToggle";
 import { containerVariants, itemVariants } from "./../style";
 import { useLanguage } from "../context/LanguageContext";
 
-const navItemsKeys = ["home", "about", "skills", "projects", "contact"];
+const navItemsKeys = [
+  "home",
+  "about",
+  "skills",
+  "Education",
+  "projects",
+  "contact",
+];
 const navItemsHrefMap = {
   home: "#hero",
   about: "#about",
   skills: "#skills",
+  education: "#education",
   projects: "#projects",
   contact: "#contact",
 };

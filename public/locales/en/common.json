@@ -17,7 +17,7 @@
   "about": {
     "title": "About Me",
     "subtitle": "Expert in building digital solutions that deliver results",
-    "p1": "With over two years of experience in web development, I specialize in transforming business visions into fast, user-friendly web applications that work seamlessly across all devices.",
+    "p1": "With over three years of experience in web development, I specialize in transforming business visions into fast, user-friendly web applications that work seamlessly across all devices.",
     "p2": "I believe a website is not just code, but an investment tool. I focus on combining attractive design with strong performance to ensure the best experience for your users.",
     "cv": "View Resume",
     "service1_title": "Full-Stack Web Development",
@@ -180,5 +180,21 @@
   },
   "footer": {
     "rights": "All rights reserved."
+  },
+  "education": {
+    "title": "Education &",
+    "highlight": "Certifications",
+    "subtitle": "My academic background and professional certified credentials backing up my technical expertise.",
+    "degree": "Bachelor Degree in Computer Science",
+    "university": "Damascus University",
+    "vica": "Professional Certification in Frontend Development - Vica Web Solutions",
+    "nodeCert": "Learn Node.js Certification",
+    "expressCert": "Learn Express.js Certification",
+    "issuer": "Scrimba via Coursera",
+    "verify": "Verify Certificate",
+    "categoryEdu": "Academic Education",
+    "categoryCert": "Professional Certificates",
+    "ragCert": "Gen AI - RAG Application Development using LangChain",
+    "inProgress": "In Progress"
   }
 }
