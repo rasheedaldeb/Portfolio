@@ -11,7 +11,7 @@ const navItemsKeys = [
   "home",
   "about",
   "skills",
-  "Education",
+  "education",
   "projects",
   "contact",
 ];

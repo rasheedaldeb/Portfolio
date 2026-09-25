@@ -6,11 +6,8 @@ import { SiCursor } from "@icons-pack/react-simple-icons";
 import { Sparkles } from "lucide-react";
 import {
   categoryButtonVariants,
-  containerVariants,
-  itemVariants,
   scrollVariants,
   skillBarVariants,
-  skillCardVariants,
 } from "../style";
 
 import {
@@ -233,14 +230,10 @@ export const SkillsSection = () => {
   };
 
   return (
-    <motion.section
+    <section
       id="skills"
       dir={isRTL ? "rtl" : "ltr"}
       className="scroll-mt-24 py-24 px-4 sm:px-6 lg:px-8 relative bg-secondary/30 overflow-hidden"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      variants={containerVariants}
     >
       {/* Background Glows */}
       <motion.div
@@ -258,7 +251,13 @@ export const SkillsSection = () => {
 
       <div className="container mx-auto max-w-7xl relative z-10">
         {/* Header */}
-        <motion.div className="text-center mb-16" variants={itemVariants}>
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20 text-sm font-medium mb-4">
             <Sparkles size={16} />
             <span>{isRTL ? "المهارات التقنية" : "Expertise"}</span>
@@ -276,10 +275,7 @@ export const SkillsSection = () => {
         </motion.div>
 
         {/* Categories Tabs */}
-        <motion.div
-          className="flex flex-wrap justify-center gap-3 mb-12"
-          variants={containerVariants}
-        >
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
           {categories.map((category, index) => (
             <motion.button
               key={category}
@@ -311,68 +307,76 @@ export const SkillsSection = () => {
               {t(`skills.categories.${category}`)}
             </motion.button>
           ))}
-        </motion.div>
+        </div>
 
         {/* Skills Grid */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeCategory}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            variants={containerVariants}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
           >
-            {filteredSkills.map((skill, index) => (
-              <motion.div
-                key={skill.name}
-                custom={index}
-                variants={skillCardVariants}
-                whileHover="hover"
-                whileTap="tap"
-                className="bg-card/80 hover:bg-card p-6 rounded-2xl border border-border/50 hover:border-primary/40 backdrop-blur-xl shadow-lg hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 relative overflow-hidden group"
-              >
+            {filteredSkills.map((skill, index) => {
+              // حركة متبادلة آمنة ومتوسطة المسافة تمنع مشاكل الشاشات الصغيرة
+              const slideDirection = index % 2 === 0 ? -20 : 20;
+
+              return (
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100"
-                  initial={{ x: "-100%" }}
-                  whileHover={{ x: "100%" }}
-                  transition={{ duration: 0.8 }}
-                />
-
-                <div className="flex items-center justify-between mb-4 relative z-10">
-                  <div className="flex items-center gap-3">
-                    <div className="p-3 rounded-xl bg-primary/10 text-primary border border-primary/20 text-2xl group-hover:scale-110 transition-transform duration-300">
-                      {skill.icon}
-                    </div>
-                    <h3 className="font-semibold text-lg text-foreground">
-                      {skill.name}
-                    </h3>
-                  </div>
-                  <span className="text-sm font-bold text-primary bg-primary/10 px-2.5 py-1 rounded-full border border-primary/20">
-                    {skill.level}%
-                  </span>
-                </div>
-
-                {/* Progress Bar */}
-                <div className="w-full bg-secondary/80 h-2 rounded-full overflow-hidden relative">
+                  key={skill.name}
+                  initial={{ opacity: 0, x: slideDirection, y: 15 }}
+                  whileInView={{ opacity: 1, x: 0, y: 0 }}
+                  viewport={{ once: true, amount: 0.05 }}
+                  transition={{
+                    duration: 0.4,
+                    delay: index * 0.03,
+                    ease: "easeOut",
+                  }}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="bg-card/80 hover:bg-card p-6 rounded-2xl border border-border/50 hover:border-primary/40 backdrop-blur-xl shadow-lg hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 relative overflow-hidden group"
+                >
                   <motion.div
-                    className="bg-gradient-to-r from-primary/80 to-primary h-2 rounded-full origin-left"
-                    variants={skillBarVariants}
-                    custom={skill.level}
-                    initial="hidden"
-                    animate="visible"
+                    className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100"
+                    initial={{ x: "-100%" }}
+                    whileHover={{ x: "100%" }}
+                    transition={{ duration: 0.8 }}
                   />
-                </div>
-              </motion.div>
-            ))}
+
+                  <div className="flex items-center justify-between mb-4 relative z-10">
+                    <div className="flex items-center gap-3">
+                      <div className="p-3 rounded-xl bg-primary/10 text-primary border border-primary/20 text-2xl group-hover:scale-110 transition-transform duration-300">
+                        {skill.icon}
+                      </div>
+                      <h3 className="font-semibold text-lg text-foreground">
+                        {skill.name}
+                      </h3>
+                    </div>
+                    <span className="text-sm font-bold text-primary bg-primary/10 px-2.5 py-1 rounded-full border border-primary/20">
+                      {skill.level}%
+                    </span>
+                  </div>
+
+                  {/* Progress Bar */}
+                  <div className="w-full bg-secondary/80 h-2 rounded-full overflow-hidden relative">
+                    <motion.div
+                      className="bg-gradient-to-r from-primary/80 to-primary h-2 rounded-full origin-left"
+                      variants={skillBarVariants}
+                      custom={skill.level}
+                      initial="hidden"
+                      animate="visible"
+                    />
+                  </div>
+                </motion.div>
+              );
+            })}
           </motion.div>
         </AnimatePresence>
 
         {/* Stats Cards */}
-        <motion.div
-          className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-4"
-          variants={containerVariants}
-        >
+        <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-4">
           {[
             { label: t("skills.stats.total"), value: skills.length },
             {
@@ -391,7 +395,10 @@ export const SkillsSection = () => {
             <motion.div
               key={index}
               className="text-center p-6 bg-card/80 border border-border/40 rounded-2xl shadow-lg backdrop-blur-xl hover:border-primary/30 transition-all group"
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
             >
               <div className="text-3xl font-bold text-primary mb-1 group-hover:scale-105 transition-transform">
                 {stat.value}
@@ -401,8 +408,8 @@ export const SkillsSection = () => {
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
